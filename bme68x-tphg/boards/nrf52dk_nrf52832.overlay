@@ -1,0 +1,16 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * BME688 on nRF52 DK (nRF52832), I2C0 default pins:
+ * SDA = P0.26, SCL = P0.27.
+ * SDO floating (pulled up on breakout) -> I2C address 0x77.
+ */
+
+&i2c0 {
+	status = "okay";
+
+	bme680@77 {
+		compatible = "bosch,bme68x-sensor-api";
+		reg = <0x77>;
+	};
+};
